@@ -17,8 +17,8 @@ token_tg = os.getenv("BOT_TOKEN")
 # gigachat_api = os.getenv("API_GIGACHAT")
 
 bot = Bot(token=token_tg)
-AudioSegment.converter = "/opt/homebrew/bin/ffmpeg"
-AudioSegment.ffprobe = "/opt/homebrew/bin/ffprobe"
+AudioSegment.converter = "ffmpeg"
+AudioSegment.ffprobe = "ffprobe"
 
 async def handle_voice(message: Message):
     try:
@@ -27,6 +27,7 @@ async def handle_voice(message: Message):
         file_path = voice.file_path
         ogg_path = f"voice_{message.from_user.id}.ogg"
         wav_path = f"voice_{message.from_user.id}.wav"
+        print(ogg_path)
         try:
             logger.info('Downloading audio file')
             await bot.download_file(file_path, destination=ogg_path)
