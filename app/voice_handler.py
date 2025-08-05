@@ -27,7 +27,6 @@ async def handle_voice(message: Message):
         file_path = voice.file_path
         ogg_path = f"voice_{message.from_user.id}.ogg"
         wav_path = f"voice_{message.from_user.id}.wav"
-        print(ogg_path)
         try:
             logger.info('Downloading audio file')
             await bot.download_file(file_path, destination=ogg_path)
