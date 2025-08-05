@@ -1,0 +1,11 @@
+[2025-07-30 17:06:02,197] #INFO     main        :19 - logger - Starting Voice Assistant...
+[2025-07-30 17:06:02,198] #INFO     dispatcher  :566 - aiogram.dispatcher - Start polling
+[2025-07-30 17:06:02,343] #INFO     dispatcher  :363 - aiogram.dispatcher - Run polling for bot @voicassistantbot id=8438707086 - 'voice_assistant'
+[2025-07-30 17:42:17,485] #ERROR    dispatcher  :219 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2025-07-30 17:42:17,487] #WARNING  dispatcher  :221 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8438707086)
+[2025-07-30 17:42:28,672] #INFO     dispatcher  :233 - aiogram.dispatcher - Connection established (tryings = 1, bot id = 8438707086)
+[2025-07-30 17:43:59,483] #ERROR    dispatcher  :219 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2025-07-30 17:43:59,486] #WARNING  dispatcher  :221 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8438707086)
+[2025-07-30 17:44:15,834] #WARNING  dispatcher  :491 - aiogram.dispatcher - Received SIGINT signal
+[2025-07-30 17:44:15,834] #INFO     dispatcher  :395 - aiogram.dispatcher - Polling stopped for bot @voicassistantbot id=8438707086 - 'voice_assistant'
+[2025-07-30 17:44:15,834] #INFO     dispatcher  :594 - aiogram.dispatcher - Polling stopped
