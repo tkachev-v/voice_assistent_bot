@@ -17,11 +17,6 @@ async def generating(text:str, prompt: str):
             verify_ssl_certs=False,
             model = 'GigaChat-2-Pro'
         )
-        tools = []
-        # agent_executor = create_react_agent(giga,
-        #                                     tools,
-        #                                     checkpointer=MemorySaver(),
-        #                                     prompt = prompt)
 
         try:
             logger.info('Starting generating process')

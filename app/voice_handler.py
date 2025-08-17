@@ -55,6 +55,3 @@ async def handle_voice(message: Message):
             if os.path.exists(path):
                 os.remove(path)
                 logger.info('Deleted temporary file: %s', path)
-
-
-
