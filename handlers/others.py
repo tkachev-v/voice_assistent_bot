@@ -1,7 +1,6 @@
 from aiogram.types import Message
 from aiogram import Router, F
 from app.generating import generating
-from logger import logger
 from prompts import prompt_text
 
 router = Router()
@@ -14,5 +13,5 @@ async def others_handler(message: Message):
 
 @other_router.message()
 async def generating_text(message: Message):
-    response = await generating(message.text, prompt_text, message.from_user.id)
+    response = await generating(message.text, prompt_text)
     await message.answer(response)

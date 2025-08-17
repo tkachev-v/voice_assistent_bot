@@ -8,9 +8,8 @@ from langgraph.checkpoint.memory import MemorySaver
 
 load_dotenv()
 gigachat_api = os.getenv("API_GIGACHAT")
-# history= BaseChatMessageHistory()
 
-async def generating(text:str, prompt: str, thread_id):
+async def generating(text:str, prompt: str):
     try:
         logger.info('Connecting to gigachat API')
         giga = GigaChat(
@@ -19,32 +18,10 @@ async def generating(text:str, prompt: str, thread_id):
             model = 'GigaChat-2-Pro'
         )
         tools = []
-        agent_executor = create_react_agent(giga,
-                                            tools,
-                                            checkpointer=MemorySaver(),
-                                            prompt = prompt)
-
-        # config = {"configurable": {"thread_id": thread_id}}
-        # agent = create_react_agent(model,
-        #                            tools = [],
-        #                            prompt=prompt_text)
-
-    #     try:
-    #         # logger.info('Starting generating process')
-    #         # messages = [SystemMessage(
-    #         #     content=prompt
-    #         # ),
-    #         #     HumanMessage(content=text)]
-    #         res = agent_executor.invoke(input = {"messages": [HumanMessage(content=text)]}, config=config)
-    #         print(res['messages'][-1].content)
-    #         return res['messages'][-1].content
-    #
-    #     except Exception as e:
-    #         logger.error('Error in generating process: %s', e)
-    #
-    # except Exception as e:
-    #     logger.error('Error in connecting to gigachat API: %s', e)
-
+        # agent_executor = create_react_agent(giga,
+        #                                     tools,
+        #                                     checkpointer=MemorySaver(),
+        #                                     prompt = prompt)
 
         try:
             logger.info('Starting generating process')
@@ -58,5 +35,3 @@ async def generating(text:str, prompt: str, thread_id):
             logger.error('Error in generating process: %s', e)
     except Exception as e:
         logger.error('Error in connecting to gigachat API: %s', e)
-
-

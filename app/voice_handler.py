@@ -14,7 +14,6 @@ from pydub import AudioSegment
 
 load_dotenv()
 token_tg = os.getenv("BOT_TOKEN")
-# gigachat_api = os.getenv("API_GIGACHAT")
 
 bot = Bot(token=token_tg)
 AudioSegment.converter = "ffmpeg"
@@ -47,7 +46,7 @@ async def handle_voice(message: Message):
                 return "Не удалось распознать речь, попробуйте записать заново!"
             except Exception as e:
                 logger.error('Error getting text from Google recognizer: %s', e)
-        response = await generating(query, prompt_voice, message.from_user.id)
+        response = await generating(query, prompt_voice)
         return response
     except Exception as e:
          logger.error('Error getting file: %s', e)
